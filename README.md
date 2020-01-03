@@ -1,6 +1,6 @@
 # docker-images-cleanup
 
-We can easily cleanup unused docker images, containers, volumes with the helop of this script.
+We can easily cleanup unused docker images, containers, volumes with the help of this script.
 
 `Note: This script can't delete the running containers or the images which is used by running containers`
 
