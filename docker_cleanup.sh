@@ -116,6 +116,15 @@ docker_space_after () {
 	docker system df
 }
 
+while true; do
+    read -p "Do you wish to install this program? (Y/N): " yn
+    case $yn in
+        [Yy]* ) docker_cleanup; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer in yes(y) or no(n)";;
+    esac
+done
+
 docker_space_before
 docker_find
 docker_cleanup
