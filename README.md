@@ -1,6 +1,6 @@
 # docker-images-cleanup
 
-In this script we are going to delete all unused images, stooped containers, volumes and network
+In this script we are going to delete all unused images, stopped containers, volumes and network
 
 `Note: This script can't delete the running containers or the images which is used by running containers`
 
