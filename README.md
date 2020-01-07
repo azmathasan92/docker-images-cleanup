@@ -14,6 +14,6 @@ We just need to run the docker-cleanup.sh script file
 
 Example:
 
-`./docker-cleanup.sh 168   # we need to specify the duration while running the script, by default its value is 336
+`./docker-cleanup.sh 168   # we need to specify the duration while running the script, by default its value is 336`
 
 The above example 168(hour) is the duration from which the data will delete.
