@@ -1,14 +1,10 @@
 #!/bin/bash
 
-HOUR=$1
-
-DURATION=${HOUR:=336}
+DURATION=${1:-336}
 
 declare -a arr=('image' 'container' 'volume' 'network')
 
 docker_space () {
-	
-	echo $HOUR
 
 	echo "#####################################################################" 
 	echo "Docker Space ${1} cleanup:"
@@ -20,8 +16,8 @@ docker_space () {
 
 docker_cleanup () {
 
-        echo "#####################################################################"
-	echo "Removing all images which are not used by existing containers"
+    echo "#####################################################################"
+	echo "Removing unused $1"
 	echo "#####################################################################"
 
 	docker $1 prune $2 $3 $4
@@ -30,9 +26,9 @@ docker_cleanup () {
 
 while true; do
 
-    echo "*******************************************************************************************************"
-    read -p "Do you wish to remove unused images, stopped containers, unused volumes and unused network ? (Y/N): " yn
-    echo "*******************************************************************************************************"
+    echo "******************************************************************************************************************************************"
+    read -p "Do you wish to remove unused images, stopped containers, unused volumes and unused network which is older than $DURATION hour ? (Y/N): " yn
+    echo "******************************************************************************************************************************************"
 
     case $yn in
         [Yy]* ) docker_space "before";
